@@ -2,9 +2,6 @@
 //  main.cpp
 //  treads
 //
-//  Created by xander on 01.09.2018.
-//  Copyright © 2018 xander. All rights reserved.
-//
 
 #include <stdlib.h>
 #include <unistd.h>
@@ -18,7 +15,7 @@ void * thread_func(void *arg) {
     int i;
     int loc_id = * (int *) arg;
     for (i = 0; i < 4; i++) {
-        printf("Potok %i rabotaet\n", loc_id);
+        printf("Stream %i working\n", loc_id);
         sleep (1);
     }
     return 0;
@@ -44,11 +41,11 @@ int main(int argc, char * argv[]) {
     }
     
     sleep (2);
-    printf("Reead&\n");
+    printf("Reead..\n");
     
     result = pthread_join(thread1, NULL);
     if (result != 0) {
-        perror("Read 1 streeam");
+        perror("Read 1 stream");
         return EXIT_FAILURE;
     }
     
